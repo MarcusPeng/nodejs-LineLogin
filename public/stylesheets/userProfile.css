@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+}
+
+.middle {
+    margin: auto;
+}
+
+.user-picture {
+    display: block;
+}
+
+.profile-table {
+    width: 600px;
+    border: 1px solid gray;
+    margin-top: 10px;
+    text-align: left; 
+}

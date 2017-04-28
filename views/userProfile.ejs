@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Profile</title>
+    <link rel='stylesheet' href='/stylesheets/normalize.css' />
+    <link rel='stylesheet' href='/stylesheets/userProfile.css' />
+</head>
+<body>
+    <img class="middle user-picture" src="<%= pictureUrl  + '/large' %>" alt="user picture">
+    <table class="middle profile-table">
+        <tr>
+            <td>userId</td>
+            <td><%= userId %></td>
+        </tr>
+        <tr>
+            <td>displayName</td>
+            <td><%= displayName %></td>
+        </tr>
+        <tr>
+            <td>pictureUrl</td>
+            <td><%= pictureUrl %></td>
+        </tr>
+        <tr>
+            <td>statusMessage</td>
+            <td><%= statusMessage %></td>
+        </tr>
+    </table>
+    <input type="button" value="BACK" onclick="window.location = '/';" />
+</body>
+</html>
