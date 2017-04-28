@@ -1,2 +1,2 @@
 # nodejs-LineLogin
-Line login and get user profile
+Line login to show user profile and save to database.
