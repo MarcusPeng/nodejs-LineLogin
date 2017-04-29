@@ -8,7 +8,7 @@ const lineService = {
             const accessUrl = config.lineApi.weblogin + 
                 "?response_type=code" +
                 "&client_id=" + applicationInfo.channelId + 
-                "&redirect_uri=" + applicationInfo.CallbackUrl +
+                "&redirect_uri=" + config.lineApi.callbackUrl +
                 "&state=" + config.lineApi.state;
             callback && callback(accessUrl);
         });
@@ -23,7 +23,7 @@ const lineService = {
                     client_id: applicationInfo.channelId,
                     client_secret: applicationInfo.channelSecret,
                     code: code,
-                    redirect_uri: applicationInfo.CallbackUrl
+                    redirect_uri: config.lineApi.callbackUrl
                 }
             };
             request.post(options, function(error, response, body) {

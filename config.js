@@ -3,7 +3,8 @@ const config = {
         weblogin: "https://access.line.me/dialog/oauth/weblogin",
         accessToken: "https://api.line.me/v2/oauth/accessToken",
         userProfile: "https://api.line.me/v2/profile",
-        state: "abc123"
+        state: "marcus822",
+        callbackUrl: "http://localhost:3000/auth/line-callback"
     },
     sql: {
         host: "xxx.xxx.xxx.xxx",
