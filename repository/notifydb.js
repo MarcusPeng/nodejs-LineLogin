@@ -1,7 +1,7 @@
 var config = require('../config');
 var mysql = require('mysql');
 
-const connection = mysql.createConnection({
+var pool  = mysql.createPool({
     host: config.sql.host,
     user: config.sql.user,
     password: config.sql.password,
@@ -9,17 +9,25 @@ const connection = mysql.createConnection({
     connectTimeout: 300000
 });
 
+// const connection = mysql.createConnection({
+//     host: config.sql.host,
+//     user: config.sql.user,
+//     password: config.sql.password,
+//     database: config.sql.database,
+//     connectTimeout: 300000
+// });
+
 const notifydb = {
     saveUserProfile: function(userProfile) {
         const command = "CALL `notifydb`.`sp_saveUserProfile`(?, ?, ?, ?);";
         const parameters = [userProfile.userId, userProfile.displayName, userProfile.pictureUrl, userProfile.statusMessage];
-        connection.query(command, parameters, function(err, rows, fields) {
+        pool.query(command, parameters, function(err, rows, fields) {
             if (err) throw err;
         });
     },
 
     getApplicationInfo: function(callback) {
-        connection.query('SELECT * FROM applicationInfo', function(err, rows, fields) {
+        pool.query('SELECT * FROM applicationInfo', function(err, rows, fields) {
             if (err) throw err;
             callback && callback(rows[0]);
         });
