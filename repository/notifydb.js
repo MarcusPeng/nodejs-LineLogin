@@ -5,7 +5,8 @@ const connection = mysql.createConnection({
     host: config.sql.host,
     user: config.sql.user,
     password: config.sql.password,
-    database: config.sql.database
+    database: config.sql.database,
+    connectTimeout: 300000
 });
 
 const notifydb = {
