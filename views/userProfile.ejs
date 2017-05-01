@@ -9,7 +9,7 @@
     <link rel='stylesheet' href='/stylesheets/userProfile.css' />
 </head>
 <body>
-    <img class="middle user-picture" src="<%= pictureUrl %>" alt="user picture">
+    <img class="middle user-picture" src="<%= pictureUrl === '' ? '/images/nobody.jpg' : pictureUrl %>" alt="user picture">
     <table class="middle profile-table">
         <tr>
             <td>userId</td>

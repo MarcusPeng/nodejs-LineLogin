@@ -27,7 +27,7 @@ router.get('/line-callback', function(req, res, next) {
 
                     if (item.userId !== undefined) {
                         //save user profile
-                        item.pictureUrl = item.pictureUrl === undefined ? "/images/nobody.jpg" : item.pictureUrl + "/large";
+                        item.pictureUrl = item.pictureUrl === undefined ? "" : item.pictureUrl + "/large";
                         item.statusMessage = item.statusMessage === undefined ? "" : item.statusMessage ;
                         item.displayName = item.displayName === undefined ? "" : item.displayName ;
                         notifydb.saveUserProfile(item);
