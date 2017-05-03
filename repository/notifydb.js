@@ -9,14 +9,6 @@ var pool  = mysql.createPool({
     connectTimeout: 300000
 });
 
-// const connection = mysql.createConnection({
-//     host: config.sql.host,
-//     user: config.sql.user,
-//     password: config.sql.password,
-//     database: config.sql.database,
-//     connectTimeout: 300000
-// });
-
 const notifydb = {
     saveUserProfile: function(userProfile) {
         const command = "CALL `notifydb`.`sp_saveUserProfile`(?, ?, ?, ?);";
@@ -27,7 +19,7 @@ const notifydb = {
     },
 
     getApplicationInfo: function(callback) {
-        pool.query('SELECT * FROM applicationInfo', function(err, rows, fields) {
+        pool.query("SELECT * FROM applicationInfo where name = 'Login';", function(err, rows, fields) {
             if (err) throw err;
             callback && callback(rows[0]);
         });
