@@ -4,7 +4,7 @@ const config = {
         accessToken: "https://api.line.me/v2/oauth/accessToken",
         userProfile: "https://api.line.me/v2/profile",
         state: "marcus822",
-        callbackUrl: "http://localhost:3000/auth/line-callback"
+        callbackUrl: "http://localhost:3000/auth/line-login-callback"
     },
     sql: {
         host: "xxx.xxx.xxx.xxx",

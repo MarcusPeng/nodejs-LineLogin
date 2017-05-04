@@ -11,7 +11,7 @@ router.get('/access-line', function(req, res, next) {
 });
 
 //line callback code and token
-router.get('/line-callback', function(req, res, next) {
+router.get('/line-login-callback', function(req, res, next) {
     if (req.query.errorCode === "417") {
         res.render('error', { message: req.query.errorMessage, error: {status: req.query.error, stack: req.query.error_description}});
     }
